@@ -1,7 +1,7 @@
 import * as readline from "readline";
 import dotenv from "dotenv";
 import { findLookalikes } from "./stages/ocean";
-import { findDecisionMakers } from "./stages/prospeo";
+import { findDecisionMakers,enrichEmails } from "./stages/prospeo";
 
 dotenv.config();
 
@@ -28,12 +28,16 @@ async function main() {
     //Find the lookalike compoanies
 
     const companies = await findLookalikes(domain);
-    console.log(`Found ${companies.length} companies`);
+    console.log(`Found ${companies.map((com) => console.log(com))} companies`);
 
     // Find decision makers
 
-    const decisionMakers = await findDecisionMakers(companies);
-    console.log(`Found ${decisionMakers.length} decision makers`);
+    // const decisionMakers = await findDecisionMakers(companies);
+    // console.log(`Found ${decisionMakers.length} decision makers`);
+
+    // // Get emails for each person
+    // const contacts = await enrichEmails(decisionMakers.slice(0, 5));
+    // console.log(`Got emails for ${contacts.length} contacts`);
 
     //resolve mails
     // const contacts = await resolveEmails(decisionMakers);
