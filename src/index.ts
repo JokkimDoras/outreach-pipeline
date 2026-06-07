@@ -46,9 +46,11 @@ async function main() {
   const decisionMakers = await findDecisionMakers(companies.slice(0, 2));
   console.log(`Found ${decisionMakers.length} decision makers`);
 
+
   const contacts = await enrichEmails(decisionMakers.slice(0, 1));
   console.log(`Got emails for ${contacts.length} contacts`);
 
+  
   // Safety checkpoint
   console.log(chalk.yellow("\n⚠️  About to send emails to:"));
   contacts.forEach(c => console.log(`  → ${c.name} <${c.email}> (${c.company})`));
