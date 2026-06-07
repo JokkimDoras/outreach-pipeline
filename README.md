@@ -1,4 +1,4 @@
-# 🚀 Outreach Pipeline
+# Outreach Pipeline
 
 An automated cold-outreach pipeline that goes from a single company domain to sending personalized emails — with zero human intervention in between.
 
