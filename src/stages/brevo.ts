@@ -39,8 +39,8 @@ export async function sendEmails(contacts: DecisionMaker[], seedDomain: string):
         );
         console.log(`✅ Sent to ${contact.name} <${contact.email}>`);
         sent++;
-      } catch (error: any) {
-        console.log(`❌ Failed to send to ${contact.email}`);
+      }catch (error: any) {
+        console.log(`❌ Failed:`, error.response?.data || error.message);
         failed++;
       }
     }

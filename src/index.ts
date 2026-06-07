@@ -43,10 +43,10 @@ async function main() {
   const companies = await findLookalikes(domain);
   console.log(`Found ${companies.length} companies`);
 
-  const decisionMakers = await findDecisionMakers(companies);
+  const decisionMakers = await findDecisionMakers(companies.slice(0, 2));
   console.log(`Found ${decisionMakers.length} decision makers`);
 
-  const contacts = await enrichEmails(decisionMakers.slice(0, 4));
+  const contacts = await enrichEmails(decisionMakers.slice(0, 1));
   console.log(`Got emails for ${contacts.length} contacts`);
 
   // Safety checkpoint
