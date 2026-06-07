@@ -38,7 +38,8 @@ export async function findLookalikes(domain: string): Promise<Company[]>{
           
           return companies;
         }catch(error:any){
-          console.log(`Ocean.io error:`, error.response?.data || error.message);             return [];
+          console.log(`Ocean.io error:`, error.response?.data || error.message);     
+          return [];
         }
          
           
