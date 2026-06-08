@@ -14,6 +14,8 @@ Best regards,
 ${process.env.SENDER_NAME}`;
 }
 
+
+
 export async function sendEmails(contacts: DecisionMaker[], seedDomain: string): Promise<void> {
     const apiKey = process.env.BREVO_API_KEY;
     const senderEmail = process.env.SENDER_EMAIL;
