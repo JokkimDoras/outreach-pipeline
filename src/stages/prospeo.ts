@@ -37,7 +37,7 @@ export async function enrichEmails(decisionMakers: DecisionMaker[]): Promise<Dec
       const errCode = error.response?.data?.error_code;
       console.log(`No email for ${person.name}: ${errCode}`);
     }
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 3000));
   }
 
   return enriched;
@@ -78,7 +78,6 @@ export async function findDecisionMakers(companies: Company[]): Promise<Decision
     );
 
     const people = response.data.results;
-    console.log('Sample:',JSON.stringify(people[0],null,2))
 
     const mapped = people.map((person: any) => ({
       name: `${person.person.first_name} ${person.person.last_name}`,
